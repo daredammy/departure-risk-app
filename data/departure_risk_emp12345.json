@@ -1,0 +1,213 @@
+{
+    "user_id": "emp12345",
+    "secret_risk": {
+        "low": [
+            {
+                "secret_id": "api_key_001",
+                "name": "Production API Key",
+                "risk_factors": {
+                    "PERSISTENT_ACCESS_RISK": "LOW"
+                },
+                "justifications": {
+                    "PERSISTENT_ACCESS_RISK": "Initial PERSISTENT_ACCESS_RISK: LOW (based on 20 days until rotation)"
+                },
+                "mitigation_strategies": {
+                    "PERSISTENT_ACCESS_RISK": "Track any anomalous actions"
+                },
+                "additional_context": {
+                    "external_mitigation": "PRESENT",
+                    "heightened_risks": {
+                        "DATA_EXFILTRATION": "MEDIUM",
+                        "UNAUTHORIZED_ACCESS": "HIGH",
+                        "SYSTEM_COMPROMISE": "MEDIUM",
+                        "COMPLIANCE_VIOLATION": "HIGH",
+                        "INTELLECTUAL_PROPERTY_THEFT": "LOW",
+                        "SERVICE_CRITICALITY": "LOW",
+                        "DATA_SENSITIVITY": "LOW"
+                    }
+                }
+            }
+        ],
+        "medium": [],
+        "high": [
+            {
+                "secret_id": "db_cred_002",
+                "name": "Database Credentials",
+                "risk_factors": {
+                    "PERSISTENT_ACCESS_RISK": "HIGH"
+                },
+                "justifications": {
+                    "PERSISTENT_ACCESS_RISK": "Initial PERSISTENT_ACCESS_RISK: HIGH (based on 1825 days until rotation)"
+                },
+                "mitigation_strategies": {
+                    "PERSISTENT_ACCESS_RISK": "Rotate key within the next 7 days"
+                },
+                "additional_context": {
+                    "external_mitigation": "PARTIAL",
+                    "heightened_risks": {
+                        "DATA_EXFILTRATION": "HIGH",
+                        "UNAUTHORIZED_ACCESS": "HIGH",
+                        "SYSTEM_COMPROMISE": "MEDIUM",
+                        "COMPLIANCE_VIOLATION": "HIGH",
+                        "INTELLECTUAL_PROPERTY_THEFT": "LOW",
+                        "SERVICE_CRITICALITY": "LOW",
+                        "DATA_SENSITIVITY": "LOW"
+                    }
+                }
+            },
+            {
+                "secret_id": "ssh_key_003",
+                "name": "Server SSH Key",
+                "risk_factors": {
+                    "PERSISTENT_ACCESS_RISK": "HIGH"
+                },
+                "justifications": {
+                    "PERSISTENT_ACCESS_RISK": "Initial PERSISTENT_ACCESS_RISK: MEDIUM (based on 128 days until rotation)\nAdjusted to HIGH due to:\n- Service criticality: HIGH\n- Data sensitivity: HIGH\n- External mitigation: PARTIAL\n- Heightened risks: UNAUTHORIZED_ACCESS, SYSTEM_COMPROMISE"
+                },
+                "mitigation_strategies": {
+                    "PERSISTENT_ACCESS_RISK": "Rotate key within the next 7 days"
+                },
+                "additional_context": {
+                    "external_mitigation": "PARTIAL",
+                    "heightened_risks": {
+                        "DATA_EXFILTRATION": "MEDIUM",
+                        "UNAUTHORIZED_ACCESS": "HIGH",
+                        "SYSTEM_COMPROMISE": "HIGH",
+                        "COMPLIANCE_VIOLATION": "MEDIUM",
+                        "INTELLECTUAL_PROPERTY_THEFT": "MEDIUM",
+                        "SERVICE_CRITICALITY": "LOW",
+                        "DATA_SENSITIVITY": "LOW"
+                    }
+                }
+            },
+            {
+                "secret_id": "oauth_token_004",
+                "name": "OAuth Access Token",
+                "risk_factors": {
+                    "PERSISTENT_ACCESS_RISK": "HIGH"
+                },
+                "justifications": {
+                    "PERSISTENT_ACCESS_RISK": "Initial PERSISTENT_ACCESS_RISK: HIGH (based on 1825 days until rotation)"
+                },
+                "mitigation_strategies": {
+                    "PERSISTENT_ACCESS_RISK": "Rotate key within the next 7 days"
+                },
+                "additional_context": {
+                    "external_mitigation": "PARTIAL",
+                    "heightened_risks": {
+                        "DATA_EXFILTRATION": "MEDIUM",
+                        "UNAUTHORIZED_ACCESS": "MEDIUM",
+                        "SYSTEM_COMPROMISE": "MEDIUM",
+                        "COMPLIANCE_VIOLATION": "MEDIUM",
+                        "INTELLECTUAL_PROPERTY_THEFT": "LOW",
+                        "SERVICE_CRITICALITY": "LOW",
+                        "DATA_SENSITIVITY": "LOW"
+                    }
+                }
+            }
+        ]
+    },
+    "file_transfer_risk": {
+        "low": [],
+        "medium": [],
+        "high": [
+            {
+                "activity_id": "file_001",
+                "name": "Q4 Financial Report.xlsx",
+                "risk_factors": {
+                    "DATA_EXFILTRATION": "HIGH"
+                },
+                "justifications": {
+                    "DATA_EXFILTRATION": "Initial DATA_EXFILTRATION: LOW (based on 4 days since activity and 2.5 MB file size)\nAdjusted to HIGH due to:\n- Data sensitivity: HIGH\n- Heightened risks: SENSITIVE_INFORMATION_EXPOSURE, INTELLECTUAL_PROPERTY_LOSS"
+                },
+                "mitigation_strategies": {
+                    "DATA_EXFILTRATION": "Contact legal department and contact employee to ask for justification"
+                },
+                "additional_context": {
+                    "heightened_risks": {
+                        "DATA_EXFILTRATION": "MEDIUM",
+                        "UNAUTHORIZED_SHARING": "LOW",
+                        "SENSITIVE_INFORMATION_EXPOSURE": "HIGH",
+                        "COMPLIANCE_VIOLATION": "MEDIUM",
+                        "INTELLECTUAL_PROPERTY_LOSS": "HIGH",
+                        "ACTIVITY_TYPE": "LOW",
+                        "FILE_SIZE": "LOW"
+                    }
+                }
+            },
+            {
+                "activity_id": "file_002",
+                "name": "Product Roadmap 2025.pptx",
+                "risk_factors": {
+                    "DATA_EXFILTRATION": "HIGH"
+                },
+                "justifications": {
+                    "DATA_EXFILTRATION": "Initial DATA_EXFILTRATION: MEDIUM (based on 3 days since activity and 15.7 MB file size)\nAdjusted to HIGH due to:\n- Data sensitivity: HIGH\n- Activity type risk: MEDIUM"
+                },
+                "mitigation_strategies": {
+                    "DATA_EXFILTRATION": "Contact legal department and contact employee to ask for justification"
+                },
+                "additional_context": {
+                    "heightened_risks": {
+                        "DATA_EXFILTRATION": "MEDIUM",
+                        "UNAUTHORIZED_SHARING": "LOW",
+                        "SENSITIVE_INFORMATION_EXPOSURE": "MEDIUM",
+                        "COMPLIANCE_VIOLATION": "LOW",
+                        "INTELLECTUAL_PROPERTY_LOSS": "MEDIUM",
+                        "ACTIVITY_TYPE": "LOW",
+                        "FILE_SIZE": "LOW"
+                    }
+                }
+            },
+            {
+                "activity_id": "transfer_001",
+                "name": "Large File Transfer",
+                "risk_factors": {
+                    "DATA_EXFILTRATION": "HIGH"
+                },
+                "justifications": {
+                    "DATA_EXFILTRATION": "Initial DATA_EXFILTRATION: HIGH (based on 5 days since activity and 500 MB file size)"
+                },
+                "mitigation_strategies": {
+                    "DATA_EXFILTRATION": "Contact legal department and contact employee to ask for justification"
+                },
+                "additional_context": {
+                    "heightened_risks": {
+                        "DATA_EXFILTRATION": "MEDIUM",
+                        "UNAUTHORIZED_SHARING": "LOW",
+                        "SENSITIVE_INFORMATION_EXPOSURE": "MEDIUM",
+                        "COMPLIANCE_VIOLATION": "MEDIUM",
+                        "INTELLECTUAL_PROPERTY_LOSS": "MEDIUM",
+                        "ACTIVITY_TYPE": "LOW",
+                        "FILE_SIZE": "LOW"
+                    }
+                }
+            },
+            {
+                "activity_id": "export_001",
+                "name": "Slack Export",
+                "risk_factors": {
+                    "DATA_EXFILTRATION": "HIGH"
+                },
+                "justifications": {
+                    "DATA_EXFILTRATION": "Initial DATA_EXFILTRATION: LOW (based on 2 days since activity and 50 MB file size)\nAdjusted to HIGH due to:\n- Data sensitivity: MEDIUM\n- Activity type risk: HIGH\n- Heightened risks: SENSITIVE_INFORMATION_EXPOSURE"
+                },
+                "mitigation_strategies": {
+                    "DATA_EXFILTRATION": "Contact legal department and contact employee to ask for justification"
+                },
+                "additional_context": {
+                    "heightened_risks": {
+                        "DATA_EXFILTRATION": "MEDIUM",
+                        "UNAUTHORIZED_SHARING": "MEDIUM",
+                        "SENSITIVE_INFORMATION_EXPOSURE": "HIGH",
+                        "COMPLIANCE_VIOLATION": "MEDIUM",
+                        "INTELLECTUAL_PROPERTY_LOSS": "LOW",
+                        "ACTIVITY_TYPE": "LOW",
+                        "FILE_SIZE": "LOW"
+                    }
+                }
+            }
+        ]
+    },
+    "overall_risk_level": "HIGH"
+}
